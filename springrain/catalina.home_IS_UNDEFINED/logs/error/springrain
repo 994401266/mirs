@@ -21,3 +21,6 @@
 2018-05-14 16:24:20,619 [main] /springrain:2050-Initializing Spring root WebApplicationContext
 2018-05-14 16:28:00,120 [qtp690686166-21] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
 2018-05-14 16:28:09,538 [qtp690686166-18] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
+2018-05-14 23:40:19,943 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 23:41:07,664 [qtp230835489-16] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 23:43:27,177 [qtp230835489-18] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
