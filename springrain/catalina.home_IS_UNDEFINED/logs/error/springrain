@@ -1,0 +1,23 @@
+2018-05-14 10:50:52,593 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 10:51:09,504 [qtp1440047379-18] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 10:51:17,736 [qtp1440047379-16] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
+2018-05-14 11:05:33,967 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 11:05:50,298 [qtp690686166-17] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 11:12:04,949 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 11:12:24,604 [qtp690686166-18] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 11:12:45,585 [qtp690686166-15] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
+2018-05-14 11:13:37,746 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 11:15:07,262 [qtp690686166-21] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 11:15:21,763 [qtp690686166-18] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
+2018-05-14 12:46:03,217 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 12:46:37,876 [qtp543846639-18] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 13:42:19,138 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 13:42:46,324 [qtp690686166-20] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 14:12:44,625 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 14:13:06,997 [qtp690686166-21] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 14:17:22,307 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 14:19:44,530 [qtp690686166-18] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 14:42:18,534 [qtp690686166-17] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
+2018-05-14 16:24:20,619 [main] /springrain:2050-Initializing Spring root WebApplicationContext
+2018-05-14 16:28:00,120 [qtp690686166-21] /springrain:2050-Initializing Spring FrameworkServlet 'springrain'
+2018-05-14 16:28:09,538 [qtp690686166-18] com.alibaba.druid.pool.DruidDataSource:932-{dataSource-1} inited
