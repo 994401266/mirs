@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springrain.frame.controller.BaseController;
@@ -38,15 +39,94 @@ public class MovieController  extends BaseController {
 	
 	private String listurl = "/system/movie/movieList";
 	
-	
+	/**
+	 * 前台首页
+	 *
+	 * @param request
+	 * @param model
+	 * @param movie
+	 * @return
+	 * @throws Exception
+	 * @author 高永强
+	 * @version 2018年5月15日 下午4:20:46
+	 */
 	@RequestMapping("/index")
 	public String index(HttpServletRequest request, Model model,Movie movie) 
 			throws Exception {
 		return "/movie/index";
 	}
 
+	/**
+	 * 跳转到电影类型分类结果页面
+	 * 
+	 * @param movieType
+	 * @param request
+	 * @param model
+	 * @param movie
+	 * @return
+	 * @throws Exception
+	 * @author 高永强
+	 * @version 2018年5月15日 下午4:21:07
+	 */
 	@RequestMapping("/types/{movieType}")
-	public String type(HttpServletRequest request, Model model, Movie movie) throws Exception {
+	public String type(@PathVariable String movieType, HttpServletRequest request, Model model,
+			Movie movie) throws Exception {
+		ReturnDatas returnDatas = ReturnDatas.getSuccessReturnDatas();
+		Page page = newPage(request);
+		page.setPageSize(24);
+		if (StringUtils.isNotBlank(movieType)) {
+			movie.setTypes(movieType);
+		}
+		movie.setStatus(1);
+		List<Map<String, Object>> datas = null;
+		try {
+
+			datas = movieService.findByQueryBean(page, movie);
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			e.printStackTrace();
+		}
+		returnDatas.setData(datas);
+		returnDatas.setQueryBean(movie);
+		model.addAttribute(GlobalStatic.returnDatas, returnDatas);
+		return "/movie/genres";
+	}
+
+	/**
+	 * 跳转到电影产地结果页面
+	 * 
+	 * @param movieType
+	 * @param request
+	 * @param model
+	 * @param movie
+	 * @return
+	 * @throws Exception
+	 * @author 高永强
+	 * @version 2018年5月15日 下午4:21:07
+	 */
+	@RequestMapping("/originPlace/{movieOriginPlace}")
+	public String originPlace(@PathVariable String movieOriginPlace, HttpServletRequest request,
+			Model model, Movie movie) throws Exception {
+		ReturnDatas returnDatas = ReturnDatas.getSuccessReturnDatas();
+		Page page = newPage(request);
+		page.setPageSize(24);
+		if (StringUtils.isNotBlank(movieOriginPlace)) {
+			movie.setOriginPlace(movieOriginPlace);
+		}
+		movie.setStatus(1);
+		List<Map<String, Object>> datas = null;
+		try {
+
+			datas = movieService.findByQueryBean(page, movie);
+
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			e.printStackTrace();
+		}
+		returnDatas.setData(datas);
+		returnDatas.setQueryBean(movie);
+		model.addAttribute(GlobalStatic.returnDatas, returnDatas);
 		return "/movie/genres";
 	}
 

@@ -106,7 +106,7 @@
 				/f/pc/** = firewall
 				/f/mp/** = firewall,wxmpautologin
 				<!-- 前端页面放这 -->
-				/front/movie/** = firewall
+				/front/** = firewall
 				/pic/upload = firewall
 				
 				/tokenerror = firewall,user

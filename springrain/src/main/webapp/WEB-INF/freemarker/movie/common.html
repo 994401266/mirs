@@ -99,6 +99,62 @@
 					</button>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
+				<script type="text/javascript">
+					$(function() {
+						//加载电影类型
+						$.ajax({
+							type: "POST",
+							data:{page:false},
+							url:'${ctx}/front/dicdata/movieCat/list/json',
+							success:function(res){
+								if(res.status == 'success'){
+									var data = res.data;
+									var movieCateLiText = "";
+									if(!!data){
+										for(var key = 0; key < data.length; key++){
+											if(key==0|| (key+1)%7==1){
+												movieCateLiText += '<div class="col-sm-4">';
+											    movieCateLiText += '<ul class="multi-column-dropdown">';
+											}
+										    movieCateLiText += '<li><a href="${ctx}/front/movie/types/'+data[key].name+'">'+data[key].name+'</a></li>';
+										    if((key>0&&(key+1)%7==0)||key==data.length-1){
+										    movieCateLiText += '</ul></div>';
+										    }
+										}
+										movieCateLiText += '<div class="clearfix"></div>';
+										$("#movieCateLi").html(movieCateLiText);
+									}
+								}
+							}
+						});
+						//加载国家
+						$.ajax({
+							type: "POST",
+							data:{page:false},
+							url:'${ctx}/front/dicdata/area/list/json',
+							success:function(res){
+								if(res.status == 'success'){
+									var data = res.data;
+									var movieAreaLiText = "";
+									if(!!data){
+										for(var key = 0; key < data.length; key++){
+											if(key==0|| (key+1)%4==1){
+												movieAreaLiText += '<div class="col-sm-4">';
+												movieAreaLiText += '<ul class="multi-column-dropdown">';
+											}
+											movieAreaLiText += '<li><a href="${ctx}/front/movie/originPlace/'+data[key].name+'">'+data[key].name+'</a></li>';
+										    if((key>0&&(key+1)%4==0)||key==data.length-1){
+										    	movieAreaLiText += '</ul></div>';
+										    }
+										}
+										movieAreaLiText += '<div class="clearfix"></div>';
+										$("#movieAreaLi").html(movieAreaLiText);
+									}
+								}
+							}
+						});
+					});
+				</script>
 				<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
 					<nav>
 						<ul class="nav navbar-nav">
@@ -106,7 +162,7 @@
 							<li class="dropdown">
 								<a href="${ctx}/img/film/#" class="dropdown-toggle" data-toggle="dropdown">Genres <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-3">
-									<li>
+									<li id="movieCateLi">
 									<div class="col-sm-4">
 										<ul class="multi-column-dropdown">
 											<li><a href="${ctx}/front/movie/types/1">Action</a></li>
@@ -147,7 +203,7 @@
 							<li class="dropdown">
 								<a href="${ctx}/img/film/#" class="dropdown-toggle" data-toggle="dropdown">Country <b class="caret"></b></a>
 								<ul class="dropdown-menu multi-column columns-3">
-									<li>
+									<li id="movieAreaLi">
 										<div class="col-sm-4">
 											<ul class="multi-column-dropdown">
 												<li><a href="${ctx}/img/film/genres.html">Asia</a></li>

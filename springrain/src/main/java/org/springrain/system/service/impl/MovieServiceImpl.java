@@ -89,6 +89,14 @@ public class MovieServiceImpl extends BaseSpringrainServiceImpl implements IMovi
 			if (movie.getStatus() != null) {
 				finder.append(" AND status=:status ").setParam("status", movie.getStatus());
 			}
+			if (StringUtils.isNotBlank(movie.getTypes())) {
+				finder.append(" AND types like:types ").setParam("types",
+						"%" + movie.getTypes().trim() + "%");
+			}
+			if (StringUtils.isNotBlank(movie.getOriginPlace())) {
+				finder.append(" AND originPlace like:originPlace ").setParam("originPlace",
+						"%" + movie.getOriginPlace().trim() + "%");
+			}
 		}
 		return super.queryForList(finder, page);
 	}
